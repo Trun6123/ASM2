@@ -1,0 +1,74 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/images/thanhba.jpg" alt="" width="50" height="50" class="d-inline-block align-text-top">
+      ATN Shop
+    </a>
+</nav>    
+<div class="container col-md-6 mt-3 mb-3 card bg-light">
+   <form action="/childrentoy/edit/{{ childrentoy._id }}" method="post">
+      <h1 class="text text-dark text-center text-uppercase mt-2">Edit Product</h1>
+      <div class="form-group mt-3">
+        <label class="h5 text text-success" for="">Name Of Children Toy</label> 
+        <input class="form-control" type="text" name="childrentoyName" value={{ childrentoy.name }} required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Quantity</label>
+         <input class="form-control" type="text" name="quantity" value={{ childrentoy.quantity }} required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Price</label>
+         <input class="form-control" type="text" name="price" value={{ childrentoy.price }} required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Date</label>
+         <input class="form-control" type="date" name="date" value={{ childrentoy.date }} required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Image</label><br>
+         <img src="{{ childrentoy.image }}" width="100" height="100">
+         <input class="form-control" type="text" name="image" value={{ childrentoy.image }} required>
+      </div>
+      <div class="form-group text-center mt-3 mb-3">
+         <input class="btn btn-primary" type="submit" value="Edit">
+      </div>
+   </form>
+</div>
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Chi nhánh ATN Shop Hà Nội</h5>
+
+        <p>
+Tòa nhà GOLDEN PARK – Số 2 Phạm Văn Bạch – Yên Hòa - Cầu Giấy
+Điện thoại: 024.7300.2266
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Chi Nhánh ATN Shop HCM</h5>
+
+        <p>
+        Tòa nhà Cộng Hòa Garden - Số 20 đường Cộng Hòa – Phường 12 – Quận Tân Bình
+Điện thoại: 028.7300.2266
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ATNShop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

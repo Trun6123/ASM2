@@ -1,0 +1,103 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/images/thanhba.jpg" alt="" width="50" height="50" class="d-inline-block align-text-top">
+      ATN Shop
+    </a>
+            <a class=" me-auto mb-2 mb-lg-0 text-white btn btn-primary"  href="/childrentoy/add">Add New Children Product</a>
+
+    <form class="d-flex input-group w-auto">
+       <th colspan="1">
+            <select class="form-control" onchange="window.location.href=this.value">
+               <option value="#">
+                  Select option to sort
+               </option>
+               <option value="/childrentoy/sort/price/asc">
+                  Sort by Price ascending
+               </option>
+               <option value="/childrentoy/sort/price/desc">
+                  Sort by Price descending
+               </option>
+            </select>
+            </th>         
+    </form>
+
+  </div>
+</nav>
+<div class="container text-center mt-3 mb-3">
+   <table class="table table-default">
+      <tr>
+         <th colspan="8">
+            <h1 class="text text-dark">CHILDREN PRODUCT LIST</h1><br>
+           
+         </th>      
+        </tr>
+      <tr>
+         <th>Name</th>
+         <th>Quantity</th>
+         <th>Price</th>
+         <th>Date</th>
+         <th>Image</th>
+         <th>Action</th>
+      </tr>
+      {{#each childrentoys }}
+            <tr>
+               <td>{{ name }}</td>
+               <td>{{ quantity}}</td>
+               <td>{{ price }}</td>
+               <td>{{ dateFormat date "DD-MM-YYYY" }}</td>
+               <td>
+                  <img src="{{ image }}" width="100" height="100">
+               </td>
+               <td>
+                  <a class="btn btn-warning" href="/childrentoy/edit/{{ _id }}">Edit</a>
+                  <a class="btn btn-danger" href="/childrentoy/delete/{{ _id }}"
+                  onclick="return confirm('Are you sure to delete this product ?');"
+                  >Delete</a>
+               </td>
+            </tr>
+      {{/each}}
+   </table>
+</div>
+
+
+
+
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Chi nhánh ATN Shop Hà Nội</h5>
+
+        <p>
+Tòa nhà GOLDEN PARK – Số 2 Phạm Văn Bạch – Yên Hòa - Cầu Giấy
+Điện thoại: 024.7300.2266
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Chi Nhánh ATN Shop HCM</h5>
+
+        <p>
+        Tòa nhà Cộng Hòa Garden - Số 20 đường Cộng Hòa – Phường 12 – Quận Tân Bình
+Điện thoại: 028.7300.2266
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ATNShop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
